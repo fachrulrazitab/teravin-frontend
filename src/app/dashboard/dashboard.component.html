@@ -1,0 +1,68 @@
+
+<h1>Customers</h1>
+<div class="row">
+  <div class="col-8 mx-auto">
+    <form class="form-inline my-2 my-lg-0">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="search"
+            ><i class="fa fa-search"></i
+          ></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Search" />
+      </div>
+      <button class="btn btn-warning my2- my-sm-0" type="button">Search</button>
+    </form>
+  </div>
+  <div class="col-8 mx-auto">
+    <table class="table">
+      <thead>
+        <th>Nama</th>
+        <th>Email</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<form>
+  <div class="form-group row">
+    <label for="txtNewUserName" class="col-sm-4 col-form-label">nama</label>
+    <div class="col-sm-30">
+      <input type="text" id="txtNewUserName" style="width:150px" class="form-control" placeholder="User Name"
+        name="name" [(ngModel)]="newUser.name"> 
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="txtNewUserPhone_number" class="col-sm-4 col-form-label">no HP</label>
+    <div class="col-sm-30">
+      <input type="text" id="txtNewUserPhone_number" style="width:150px" class="form-control" placeholder="User Phone_number"
+        name="phone_number" [(ngModel)]="newUser.phone_number"> 
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="txtNewUserEmail" class="col-sm-4 col-form-label">email</label>
+    <div class="col-sm-30">
+      <input type="text" id="txtNewUserEmail" style="width:150px" class="form-control" placeholder="User Email"
+        name="email" [(ngModel)]="newUser.email"> 
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="txtNewAddress" class="col-sm-4 col-form-label">alamat</label>
+    <div class="col-sm-10">
+      <input type="text" id="txtNewUserAddress" style="width:150px" class="form-control" placeholder="alamat"
+        name="address" [(ngModel)]="newUser.address"> 
+      <button (click)="add()">+</button>
+    </div>
+  </div>
+  
+
+  <button class="btn btn-success" data-dismiss="modal" (click)="onSaveClick()">Save</button>
+  
+</form>
